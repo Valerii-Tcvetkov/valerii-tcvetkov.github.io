@@ -1,14 +1,14 @@
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     color: #000;
     line-height: 1.0;
-    font-family: 'Playfair Display', serif;
+    font-family: "Bradley Hand", cursive;
 }
 
 main {
     padding: 3px;
+    font-family: "Bradley Hand", cursive;
     background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), no-repeat center/400% url("../img/blue-background-geometric-vector-21866956.jpg");
 }
 
@@ -17,7 +17,7 @@ header, footer {
     background: #7b82ff;
     color: #f8f9ff;
     font-size: 24px;
-    font-family: 'Parisienne', cursive;
+    font-family: "Bradley Hand", cursive;
     border-bottom: 20px solid #5f5fa8;
     border-top: 20px solid rgb(144, 182, 255);
 }
@@ -125,14 +125,31 @@ header, footer {
     margin: 20px;
 }
 
-/*ul.navigation_bar {*/
-    /*position: relative;*/
-    /*min-width: 696px;*/
-    /*list-style: none;*/
-    /*padding-top: 20px;*/
-    /*text-align: right;*/
-    /*vertical-align: top;*/
-/*}*/
-/*ul.navigation_bar li {*/
-    /*display: inline;*/
-/*}*/
+.info_form input[type=text], textarea{
+    width: 100%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#order {
+    width: 100%;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 14px 0 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px #ddd;
+}
