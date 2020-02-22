@@ -22,14 +22,26 @@ header, footer {
     border-top: 20px solid rgb(144, 182, 255);
 }
 
-.navigation_bar {
+nav {
     display: inline-block;
     text-align: right;
     width: 37%;
     margin-right: 1%;
 }
 
-.navigation_bar ul {
+nav ul {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.social_network {
+    display: inline-block;
+    text-align: right;
+    width: 37%;
+    margin-right: 1%;
+}
+
+.social_network ul {
     margin-bottom: 0px;
     margin-top: 0px;
 }
@@ -47,7 +59,7 @@ header, footer {
 }
 
 .main_text {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .adding_text {
@@ -68,7 +80,7 @@ header, footer {
     padding: 20px;
     font-size: 25px;
 }
-.main_info h1 {
+.main_info h2 {
     margin: 0px;
 }
 .main_info p {
@@ -111,11 +123,11 @@ header, footer {
     border: 5px dashed #538aa5;
 }
 
-#social_network li {
+.social_network li {
     display: inline;
 }
 
-#social_network img {
+.social_network img {
     height: 10%;
     width: 10%;
 }
@@ -125,7 +137,7 @@ header, footer {
     margin: 20px;
 }
 
-.info_form input[type=text], textarea{
+.info_form input[type=text], input[type=tel], textarea{
     width: 100%;
     margin: 8px 0;
     display: inline-block;
@@ -135,6 +147,7 @@ header, footer {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    font-size: 30px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 12px;

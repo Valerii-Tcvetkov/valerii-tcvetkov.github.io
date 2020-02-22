@@ -7,22 +7,22 @@
 </head>
 <body>
 <header>
-    <div class="intro">
-        <p class="main_text">Добро пожаловать!</p>
-        <p class="adding_text">Мы всегда рады любителям животных!</p>
-    </div>
-    <div class="navigation_bar">
+    <section class="intro">
+        <h1 class="main_text">PetHome - уютный приют для животных</h1>
+        <p class="adding_text">Мы всегда рады новым посетителям!</p>
+    </section>
+    <nav>
         <ul class="nav_list">
             <li class="nav_item"><span>Главная</span></li>
             <li class="nav_item"><a href=#">О нас</a></li>
             <li class="nav_item"><a href=#>Контакты</a></li>
         </ul>
-    </div>
+    </nav>
 </header>
 
 <main>
     <section class="main_info">
-        <h1>Человека определяет человечность</h1>
+        <h2>Человека определяет человечность</h2>
         <article>
             <p>Мы - небольшая группа людей, занимающаяся спасением бездомных животных. Мы всегда рады новым посетителям, а также новым хозяевам наших питомцев.</p>
             <p>На данной странице Вы можете ознакомиться с нашей деятельностью, а также оставить свои контакты, чтобы мы связались с Вами.</p>
@@ -30,7 +30,7 @@
     </section>
 
     <section class="main_info">
-        <h1>Наша цель</h1>
+        <h2>Наша цель</h2>
         <article>
             <p>Основной задачей для нас является уход за пострадавшими животными и питомцами. Мы находим их и содержим в нашем приюте.</p>
             <p>Некоторых животных после реабилитации мы передаем в специальные заповедники или выпускаем на волю. Питомцы остаются у нас и ждут новых хозяев.</p>
@@ -41,20 +41,20 @@
     <section class="animals">
         <ul>
             <li>
-                <h1>Бобби</h1>
-                <img class="img_animal" src="img/pakarana_006.jpg">
+                <h3>Бобби</h3>
+                <img class="img_animal" src="img/pakarana_006.jpg" alt="Пакарана Бобби">
                 <p>Бобби - <a href="https://ru.wikipedia.org/wiki/Пакарана">пакарана</a>, он попал к нам два месяца назад.</p>
                 <p>Он выглядел очень уставшим после толп туристов, поэтому мы его выкупили, и теперь он отдыхает у нас.</p>
             </li>
             <li>
-                <h1>Биба и Боба</h1>
-                <img class="img_animal" src="img/dva-homyaka-e1502987422147.jpg">
+                <h3>Биба и Боба</h3>
+                <img class="img_animal" src="img/dva-homyaka-e1502987422147.jpg" alt="Хомяки Биба и Боба">
                 <p>Биба и Боба - джунгарские хомяки, братья. Они очень энергичные и шустрые.</p>
                 <p>Особенно Биба и Боба нравятся детям, но также они способны привлечь и внимание взрослых.</p>
             </li>
             <li>
-                <h1>Ержан</h1>
-                <img class="img_animal" src="img/erzhan-768x569.jpg">
+                <h3>Ержан</h3>
+                <img class="img_animal" src="img/erzhan-768x569.jpg" alt="Шимпанзе Ержан">
                 <p>Ержан - шимпанзе, которому не давали поспать в цирке. Ержан много работал, и даже был героем <a href="https://www.youtube.com/watch?v=QscSOhOUcS4">видеоролика.</a></p>
                 <p>Когда он обрел популярность, мы забрали его себе, и теперь он является символом нашего приюта.</p>
             </li>
@@ -62,28 +62,41 @@
     </section>
 
     <form class="info_form" action=#>
-        <p>Закажите обратный звонок и мы обязательно Вам перезвоним для дополнительной консультации.</p>
+        <h4>Закажите обратный звонок и мы обязательно Вам перезвоним для дополнительной консультации.</h4>
         <fieldset>
             <legend>Контактная информация</legend>
-            <p><label for="name">Имя</label><input type="text" id="name" placeholder="Иван"></p>
-            <p><label for="phone">Телефон</label><input type="text" id="phone" placeholder="8800553535"></p>
-            <p><label for="comment">Комментарий</label><textarea id="comment" rows="5" cols="50"></textarea></p>
+            <section><label for="name">Имя</label><input type="text" id="name" placeholder="Иван"></section>
+            <section><label for="phone">Телефон</label><input type="tel" id="phone" placeholder="8800553535"></section>
+            <section><label for="comment">Комментарий</label><textarea id="comment" rows="5" cols="50"></textarea></section>
         </fieldset>
-        <button id="order">Заказать звонок</button>
+        <button id="order" type="submit">Заказать звонок</button>
     </form>
 </main>
 
 <footer>
-    <div class="intro">
+    <section class="intro">
         <p>Подписывайтесь на наши сообщества в соцсетях:</p>
-    </div>
-    <div class="navigation_bar">
-        <ul id="social_network">
-            <li><a href="https://ru-ru.facebook.com"><img src="img/fb_icon_325x325.png"></a></li>
-            <li><a href="https://vk.com"><img src="img/500px-VK.com-logo.svg.png"></a></li>
-            <li><a href="https://www.instagram.com"><img src="img/Instagram-Icon.png"></a></li>
+    </section>
+    <section class="social_network">
+        <ul>
+            <li><a href="https://ru-ru.facebook.com"><img src="img/fb_icon_325x325.png" alt="Facebook icon"></a></li>
+            <li><a href="https://vk.com"><img src="img/500px-VK.com-logo.svg.png" alt="VK icon"></a></li>
+            <li><a href="https://www.instagram.com"><img src="img/Instagram-Icon.png" alt="Instagram icon"></a></li>
         </ul>
-    </div>
+    </section>
 </footer>
 </body>
 </html>
+
+<!--
+* nav
+* заголовок h1 добавить
+* div >> section on header and footer
+* h1 on sections >> h2-h3 (h1 only one)
+
+* for all images (animals, footer) add class, alt
+* заказ обратного звонка сменить на заголовок
+* в форме отступы целиком через стили (обернуть в section или div)
+* телефон - type tel
+* button - type "submit"
+-->
