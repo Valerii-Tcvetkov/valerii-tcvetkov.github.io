@@ -1,6 +1,138 @@
-body,html{
-    padding: 0;
+body {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #000;
+    line-height: 1.0;
+    font-family: 'Playfair Display', serif;
 }
+
+main {
+    padding: 3px;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), no-repeat center/400% url("../img/blue-background-geometric-vector-21866956.jpg");
+}
+
+header, footer {
+    padding: 3px;
+    background: #7b82ff;
+    color: #f8f9ff;
+    font-size: 24px;
+    font-family: 'Parisienne', cursive;
+    border-bottom: 20px solid #5f5fa8;
+    border-top: 20px solid rgb(144, 182, 255);
+}
+
+.navigation_bar {
+    display: inline-block;
+    text-align: right;
+    width: 37%;
+    margin-right: 1%;
+}
+
+.navigation_bar ul {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.intro {
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+    margin-left: 1%;
+}
+
+.intro p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.main_text {
+    font-size: 30px;
+}
+
+.adding_text {
+    font-size: 20px;
+}
+
+.nav_list {
+    text-align: right;
+}
+
+.nav_item {
+    display: inline;
+}
+
+.main_info {
+    border: 5px dashed #538aa5;
+    margin: 20px;
+    padding: 20px;
+    font-size: 25px;
+}
+.main_info h1 {
+    margin: 0px;
+}
+.main_info p {
+    margin-bottom: 0px;
+}
+
+.img_animal {
+    border-radius: 50%;
+    border: 5px solid rgba(78, 78, 149, 0.76);
+    height: 90%;
+    width: 90%;
+}
+
+.animals {
+    font-size: 30px;
+}
+
+.animals li{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+
+.animals p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 90%;
+}
+
+.info_form {
+    width: 80%;
+    /*display: compact;*/
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-size: 30px;
+}
+
+.info_form fieldset {
+    border: 5px dashed #538aa5;
+}
+
+#social_network li {
+    display: inline;
+}
+
+#social_network img {
+    height: 10%;
+    width: 10%;
+}
+
+#order {
+    font-size: 30px;
+    margin: 20px;
+}
+
+/*ul.navigation_bar {*/
+    /*position: relative;*/
+    /*min-width: 696px;*/
+    /*list-style: none;*/
+    /*padding-top: 20px;*/
+    /*text-align: right;*/
+    /*vertical-align: top;*/
+/*}*/
+/*ul.navigation_bar li {*/
+    /*display: inline;*/
+/*}*/

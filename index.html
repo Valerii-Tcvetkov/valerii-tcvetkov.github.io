@@ -7,17 +7,21 @@
 </head>
 <body>
 <header>
-    <h1>Добро пожаловать!</h1>
-    <h2>Мы всегда рады любителям животных!</h2>
-    <ul id="navigation_bar">
-        <li class="active"><span>Главная</span></li>
-        <li><a href=#">О нас</a></li>
-        <li><a href=#>Контакты</a></li>
-    </ul>
+    <div class="intro">
+        <p class="main_text">Добро пожаловать!</p>
+        <p class="adding_text">Мы всегда рады любителям животных!</p>
+    </div>
+    <div class="navigation_bar">
+        <ul class="nav_list">
+            <li class="nav_item"><span>Главная</span></li>
+            <li class="nav_item"><a href=#">О нас</a></li>
+            <li class="nav_item"><a href=#>Контакты</a></li>
+        </ul>
+    </div>
 </header>
 
 <main>
-    <section id="main_info">
+    <section class="main_info">
         <h1>Человека определяет человечность</h1>
         <article>
             <p>Мы - небольшая группа людей, занимающаяся спасением бездомных животных. Мы всегда рады новым посетителям, а также новым хозяевам наших питомцев.</p>
@@ -25,7 +29,7 @@
         </article>
     </section>
 
-    <section id="detail_info">
+    <section class="main_info">
         <h1>Наша цель</h1>
         <article>
             <p>Основной задачей для нас является уход за пострадавшими животными и питомцами. Мы находим их и содержим в нашем приюте.</p>
@@ -34,46 +38,52 @@
         </article>
     </section>
 
-    <ul id="animals">
-        <li>
-            <h1>Бобби</h1>
-            <p>Бобби - <a href="https://ru.wikipedia.org/wiki/Пакарана">пакарана</a>, он попал к нам два месяца назад.</p>
-            <p>Он выглядел очень уставшим после толп туристов, поэтому мы его выкупили, и теперь он отдыхает у нас.</p>
-            <img src="img/pakarana_006.jpg" height="30%" width="30%">
-        </li>
-        <li>
-            <h1>Биба и Боба</h1>
-            <p>Биба и Боба - джунгарские хомяки, братья. Они очень энергичные и шустрые.</p>
-            <p>Особенно Биба и Боба нравятся детям, но также они способны привлечь и внимание взрослых.</p>
-            <img src="img/dva-homyaka-e1502987422147.jpg" height="30%" width="30%">
-        </li>
-        <li>
-            <h1>Ержан</h1>
-            <p>Ержан - шимпанзе, которому не давали поспать в цирке. Ержан много работал, и даже был героем <a href="https://www.youtube.com/watch?v=QscSOhOUcS4">видеоролика.</a></p>
-            <p>Когда он обрел популярность, мы забрали его себе, и теперь он является символом нашего приюта.</p>
-            <img src="img/erzhan-768x569.jpg" height="30%" width="30%">
-        </li>
-    </ul>
+    <section class="animals">
+        <ul>
+            <li>
+                <h1>Бобби</h1>
+                <img class="img_animal" src="img/pakarana_006.jpg">
+                <p>Бобби - <a href="https://ru.wikipedia.org/wiki/Пакарана">пакарана</a>, он попал к нам два месяца назад.</p>
+                <p>Он выглядел очень уставшим после толп туристов, поэтому мы его выкупили, и теперь он отдыхает у нас.</p>
+            </li>
+            <li>
+                <h1>Биба и Боба</h1>
+                <img class="img_animal" src="img/dva-homyaka-e1502987422147.jpg">
+                <p>Биба и Боба - джунгарские хомяки, братья. Они очень энергичные и шустрые.</p>
+                <p>Особенно Биба и Боба нравятся детям, но также они способны привлечь и внимание взрослых.</p>
+            </li>
+            <li>
+                <h1>Ержан</h1>
+                <img class="img_animal" src="img/erzhan-768x569.jpg">
+                <p>Ержан - шимпанзе, которому не давали поспать в цирке. Ержан много работал, и даже был героем <a href="https://www.youtube.com/watch?v=QscSOhOUcS4">видеоролика.</a></p>
+                <p>Когда он обрел популярность, мы забрали его себе, и теперь он является символом нашего приюта.</p>
+            </li>
+        </ul>
+    </section>
 
-    <form action=# name="order_form">
+    <form class="info_form" action=#>
         <p>Закажите обратный звонок и мы обязательно Вам перезвоним для дополнительной консультации.</p>
         <fieldset>
             <legend>Контактная информация</legend>
             <p><label for="name">Имя</label><input type="text" id="name" placeholder="Иван"></p>
             <p><label for="phone">Телефон</label><input type="text" id="phone" placeholder="8800553535"></p>
-            <p><label for="comment">Комментарий</label><textarea id="comment" rows="2" cols="50"></textarea></p>
+            <p><label for="comment">Комментарий</label><textarea id="comment" rows="5" cols="50"></textarea></p>
         </fieldset>
+        <button id="order">Заказать звонок</button>
     </form>
-    <button id="order">Заказать звонок</button>
 </main>
 
 <footer>
-    <p>Ищите нас в соцсетях.</p>
-    <ul id="social_network">
-        <li><a href="https://ru-ru.facebook.com"><img src="img/fb_icon_325x325.png" height="5%" width="5%"></a></li>
-        <li><a href="https://vk.com"><img src="img/500px-VK.com-logo.svg.png" height="5%" width="5%"></a></li>
-        <li><a href="https://www.instagram.com"><img src="img/Instagram-Icon.png" height="5%" width="5%"></a></li>
-    </ul>
+    <div class="intro">
+        <p>Подписывайтесь на наши сообщества в соцсетях:</p>
+    </div>
+    <div class="navigation_bar">
+        <ul id="social_network">
+            <li><a href="https://ru-ru.facebook.com"><img src="img/fb_icon_325x325.png"></a></li>
+            <li><a href="https://vk.com"><img src="img/500px-VK.com-logo.svg.png"></a></li>
+            <li><a href="https://www.instagram.com"><img src="img/Instagram-Icon.png"></a></li>
+        </ul>
+    </div>
 </footer>
 </body>
 </html>
