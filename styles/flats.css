@@ -36,3 +36,7 @@ ol > li {
 .in-watched {
     color: rgb(187, 138, 71);
 }
+
+.del {
+    text-decoration: line-through;
+}
