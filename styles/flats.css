@@ -37,6 +37,15 @@ ol > li {
     color: rgb(187, 138, 71);
 }
 
+.watched {
+    color: #4CAF50;
+}
+
 .del {
     text-decoration: line-through;
+}
+
+.note {
+    text-decoration: underline;
+    font-style: italic;
 }
