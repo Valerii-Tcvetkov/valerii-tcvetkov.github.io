@@ -1,102 +1,217 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Landing page</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Weather</title>
+      <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-<header>
-    <section class="intro">
-        <h1 class="main_text">PetHome - уютный приют для животных</h1>
-        <p class="adding_text">Мы всегда рады новым посетителям!</p>
-    </section>
-    <nav>
-        <ul class="nav_list">
-            <li class="nav_item"><span>Главная</span></li>
-            <li class="nav_item"><a href=#">О нас</a></li>
-            <li class="nav_item"><a href=#>Контакты</a></li>
+      <header class="weatherHere">
+              <h1 class="title">Погода здесь</h1>
+              <button class="renew" type="button" name="renewLocation">Обновить геолокацию</button>
+              <button class="btn-renew"><img src="icons/reload.png" class="reload-img"></button>
+      </header>
+
+      <main class="main">
+
+        <div class="mainInfo">
+          <div class="mainCity">
+              <h3>Saint-Petersburg</h3>
+              <div class="weatherMain">
+                    <img src="icons/rain.png" class="fav-city-img">
+                    <p class="mainTemp">8°C</p>
+              </div>
+          </div>
+
+
+          <ul class="info">
+                <li class="option">
+                      <h4>Ветер</h4>
+                      <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
+                </li>
+
+                <li class="option">
+                      <h4>Облачность</h4>
+                      <p>Broken clouds</p>
+                </li>
+
+                <li class="option">
+                      <h4>Давление</h4>
+                      <p>1013 hpa</p>
+                </li>
+
+                <li class="option">
+                      <h4>Влажность</h4>
+                      <p>52%</p>
+                </li>
+
+                <li class="option">
+                      <h4>Координаты</h4>
+                      <p>[59.88, 30.42]</p>
+                </li>
         </ul>
-    </nav>
-</header>
+        </div>
 
-<main>
-    <section class="main_info">
-        <h2>Человека определяет человечность</h2>
-        <article>
-            <p>Мы - небольшая группа людей, занимающаяся спасением бездомных животных. Мы всегда рады новым посетителям, а также новым хозяевам наших питомцев.</p>
-            <p>На данной странице Вы можете ознакомиться с нашей деятельностью, а также оставить свои контакты, чтобы мы связались с Вами.</p>
-        </article>
-    </section>
 
-    <section class="main_info">
-        <h2>Наша цель</h2>
-        <article>
-            <p>Основной задачей для нас является уход за пострадавшими животными и питомцами. Мы находим их и содержим в нашем приюте.</p>
-            <p>Некоторых животных после реабилитации мы передаем в специальные заповедники или выпускаем на волю. Питомцы остаются у нас и ждут новых хозяев.</p>
-            <p>Нам не важна прибыль, мы не просим материальной поддержки. Нам важно найти новый дом для пострадавших зверушек.</p>
-        </article>
-    </section>
 
-    <section class="animals">
-        <ul>
-            <li>
-                <h3>Бобби</h3>
-                <img class="img_animal" src="img/pakarana_006.jpg" alt="Пакарана Бобби">
-                <p>Бобби - <a href="https://ru.wikipedia.org/wiki/Пакарана">пакарана</a>, он попал к нам два месяца назад.</p>
-                <p>Он выглядел очень уставшим после толп туристов, поэтому мы его выкупили, и теперь он отдыхает у нас.</p>
-            </li>
-            <li>
-                <h3>Биба и Боба</h3>
-                <img class="img_animal" src="img/dva-homyaka-e1502987422147.jpg" alt="Хомяки Биба и Боба">
-                <p>Биба и Боба - джунгарские хомяки, братья. Они очень энергичные и шустрые.</p>
-                <p>Особенно Биба и Боба нравятся детям, но также они способны привлечь и внимание взрослых.</p>
-            </li>
-            <li>
-                <h3>Ержан</h3>
-                <img class="img_animal" src="img/erzhan-768x569.jpg" alt="Шимпанзе Ержан">
-                <p>Ержан - шимпанзе, которому не давали поспать в цирке. Ержан много работал, и даже был героем <a href="https://www.youtube.com/watch?v=QscSOhOUcS4">видеоролика.</a></p>
-                <p>Когда он обрел популярность, мы забрали его себе, и теперь он является символом нашего приюта.</p>
-            </li>
-        </ul>
-    </section>
+      <section class="favourite">
+            <div class="fav">
+                <h2>Избранное</h2>
+                <div class="add-city">
+                  <input class="input-city" type="text" placeholder="Добавить новый город">
+                  <button class="plus-bottom">&plus;</button>
+                </div>
+            </div>
 
-    <form class="info_form" action=#>
-        <h4>Закажите обратный звонок и мы обязательно Вам перезвоним для дополнительной консультации.</h4>
-        <fieldset>
-            <legend>Контактная информация</legend>
-            <section><label for="name">Имя</label><input type="text" id="name" placeholder="Иван"></section>
-            <section><label for="phone">Телефон</label><input type="tel" id="phone" placeholder="88005553535"></section>
-            <section><label for="comment">Комментарий</label><textarea id="comment" rows="5" cols="50"></textarea></section>
-        </fieldset>
-        <button id="order" type="submit">Заказать звонок</button>
-    </form>
-</main>
+            <ul class="cities">
 
-<footer>
-    <section class="intro">
-        <p>Подписывайтесь на наши сообщества в соцсетях:</p>
-    </section>
-    <section class="social_network">
-        <ul>
-            <li><a href="https://ru-ru.facebook.com"><img src="img/fb_icon_325x325.png" alt="Facebook icon"></a></li>
-            <li><a href="https://vk.com"><img src="img/500px-VK.com-logo.svg.png" alt="VK icon"></a></li>
-            <li><a href="https://www.instagram.com"><img src="img/Instagram-Icon.png" alt="Instagram icon"></a></li>
-        </ul>
-    </section>
-</footer>
+                <li class="city">
+                      <div class="cityWeather">
+                            <h3>Moscow</h3>
+                            <p class="temp">5°C</p>
+                            <img src="icons/sun.png" class="fav-city-img">
+                            <button class="remove-bottom">&times;</button>
+                      </div>
+
+                      <ul class="info">
+                            <li class="option">
+                                  <h4>Ветер</h4>
+                                  <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Облачность</h4>
+                                  <p>Broken clouds</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Давление</h4>
+                                  <p>1013 hpa</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Влажность</h4>
+                                  <p>52%</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Координаты</h4>
+                                  <p>[59.88, 30.42]</p>
+                            </li>
+                    </ul>
+                </li>
+
+                <li class="city">
+                      <div class="cityWeather">
+                            <h3>Samara</h3>
+                            <p class="temp">26°C</p>
+                            <img src="icons/rain.png" class="fav-city-img">
+                            <button class="remove-bottom">&times;</button>
+                      </div>
+
+                      <ul class="info">
+                            <li class="option">
+                                  <h4>Ветер</h4>
+                                  <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Облачность</h4>
+                                  <p>Broken clouds</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Давление</h4>
+                                  <p>1013 hpa</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Влажность</h4>
+                                  <p>52%</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Координаты</h4>
+                                  <p>[59.88, 30.42]</p>
+                            </li>
+                      </ul>
+                </li>
+
+                <li class="city">
+                      <div class="cityWeather">
+                            <h3>Miass</h3>
+                            <p class="temp">20°C</p>
+                            <img src="icons/sun.png" class="fav-city-img">
+                            <button class="remove-bottom">&times;</button>
+                      </div>
+
+                      <ul class="info">
+                            <li class="option">
+                                  <h4>Ветер</h4>
+                                  <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Облачность</h4>
+                                  <p>Broken clouds</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Давление</h4>
+                                  <p>1013 hpa</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Влажность</h4>
+                                  <p>52%</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Координаты</h4>
+                                  <p>[59.88, 30.42]</p>
+                            </li>
+                      </ul>
+                </li>
+
+                <li class="city">
+                      <div class="cityWeather">
+                            <h3>Sochi</h3>
+                            <p class="temp">34°C</p>
+                            <img src="icons/rain.png" class="fav-city-img">
+                            <button class="remove-bottom">&times;</button>
+                      </div>
+
+                      <ul class="info">
+                            <li class="option">
+                                  <h4>Ветер</h4>
+                                  <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Облачность</h4>
+                                  <p>Broken clouds</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Давление</h4>
+                                  <p>1013 hpa</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Влажность</h4>
+                                  <p>52%</p>
+                            </li>
+
+                            <li class="option">
+                                  <h4>Координаты</h4>
+                                  <p>[59.88, 30.42]</p>
+                            </li>
+                      </ul>
+                </li>
+            </ul>
+      </section>
+  </main>
 </body>
-</html>
-
-<!--
-* nav
-* заголовок h1 добавить
-* div >> section on header and footer
-* h1 on sections >> h2-h3 (h1 only one)
-
-* for all images (animals, footer) add class, alt
-* заказ обратного звонка сменить на заголовок
-* в форме отступы целиком через стили (обернуть в section или div)
-* телефон - type tel
-* button - type "submit"
--->
