@@ -7,210 +7,111 @@
       <title>Weather</title>
       <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-      <header class="weatherHere">
-              <h1 class="title">Погода здесь</h1>
-              <button class="renew" type="button" name="renewLocation">Обновить геолокацию</button>
-              <button class="btn-renew"><img src="icons/reload.png" class="reload-img"></button>
-      </header>
+<header class="weatherTop">
+    <h1 class="weatherTopName">Погода здесь</h1>
+    <form method="get" name="updateLocation">
+        <button class="updButton" type="button" name="updateLocation">Обновить геолокацию</button>
+        <button class="updButtonImg" type="button" name="updateLocation">
+            <img src="icons/reload.png" class="updateImg" alt="update"/>
+        </button>
+    </form>
+</header>
 
-      <main class="main">
+<main class="main">
+    <section class="mainCityInfo"></section>
 
-        <section class="mainInfo">
-          <div class="mainCity">
-              <h2>Saint-Petersburg</h2>
-              <div class="weatherMain">
-                    <img src="icons/rain.png" class="fav-city-img">
-                    <p class="mainTemp">8°C</p>
-              </div>
-          </div>
-
-
-          <ul class="info">
-                <li class="option">
-                      <h4>Ветер</h4>
-                      <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
-                </li>
-
-                <li class="option">
-                      <h4>Облачность</h4>
-                      <p>Broken clouds</p>
-                </li>
-
-                <li class="option">
-                      <h4>Давление</h4>
-                      <p>1013 hpa</p>
-                </li>
-
-                <li class="option">
-                      <h4>Влажность</h4>
-                      <p>52%</p>
-                </li>
-
-                <li class="option">
-                      <h4>Координаты</h4>
-                      <p>[59.88, 30.42]</p>
-                </li>
-        </ul>
-        </section>
-
-
-
-      <section class="favourite">
-            <div class="fav">
-                <h2>Избранное</h2>
-                <div class="add-city">
-                  <input class="input-city" type="text" placeholder="Добавить новый город">
-                  <button class="plus-bottom">&plus;</button>
-                </div>
+    <section class="favorite">
+        <div class="favoriteTop">
+            <h2>Избранное</h2>
+            <div>
+                <form method="get" name="addNewCity" class="addNewCity">
+                    <input name="newCityName" class="newCity" type="text" placeholder="Добавить новый город">
+                    <input type="submit" value="+" class="addButton">
+                </form>
             </div>
+        </div>
 
-            <ul class="cities">
+        <ul class="favoriteCities"></ul>
+    </section>
+</main>
 
-                <li class="city">
-                      <div class="cityWeather">
-                            <h3>Moscow</h3>
-                            <p class="temp">5°C</p>
-                            <img src="icons/sun.png" class="fav-city-img">
-                            <button class="remove-bottom">&times;</button>
-                      </div>
+<template id="tempCurrentCityLoader">
+    <div class="currentCityLoader"></div>
+</template>
 
-                      <ul class="info">
-                            <li class="option">
-                                  <h4>Ветер</h4>
-                                  <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
-                            </li>
+<template id="tempFavoriteCityLoader">
+    <li class="favoriteCity">
+        <div class="currentCityLoader"></div>
+    </li>
+</template>
 
-                            <li class="option">
-                                  <h4>Облачность</h4>
-                                  <p>Broken clouds</p>
-                            </li>
+<template id="tempCurrentCity">
+    <div class="mainCity">
+        <h2 class="mainCityName"></h2>
+        <div class="mainWeather">
+            <img src="" class="currentWeatherImage" alt="weather"/>
+            <p class="currentDegrees"></p>
+        </div>
+    </div>
+    <ul class="info">
+        <li class="option">
+            <span>Ветер</span>
+            <p></p>
+        </li>
+        <li class="option">
+            <span>Облачность</span>
+            <p></p>
+        </li>
+        <li class="option">
+            <span>Давление</span>
+            <p></p>
+        </li>
+        <li class="option">
+            <span>Влажность</span>
+            <p></p>
+        </li>
+        <li class="option">
+            <span>Координаты</span>
+            <p></p>
+        </li>
+    </ul>
+</template>
 
-                            <li class="option">
-                                  <h4>Давление</h4>
-                                  <p>1013 hpa</p>
-                            </li>
+<template id="tempFavoriteCity">
+    <li class="favoriteCity">
+        <div class="favoriteWeather">
+            <h3 class="favoriteCityName"></h3>
+            <p class="degrees"></p>
+            <img src="" class="favoriteWeatherImage" alt="weather small"/>
+            <button onclick="" type="button" name="button" class="deleteButton">+</button>
+        </div>
 
-                            <li class="option">
-                                  <h4>Влажность</h4>
-                                  <p>52%</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Координаты</h4>
-                                  <p>[59.88, 30.42]</p>
-                            </li>
-                    </ul>
-                </li>
-
-                <li class="city">
-                      <div class="cityWeather">
-                            <h3>Samara</h3>
-                            <p class="temp">26°C</p>
-                            <img src="icons/rain.png" class="fav-city-img">
-                            <button class="remove-bottom">&times;</button>
-                      </div>
-
-                      <ul class="info">
-                            <li class="option">
-                                  <h4>Ветер</h4>
-                                  <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Облачность</h4>
-                                  <p>Broken clouds</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Давление</h4>
-                                  <p>1013 hpa</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Влажность</h4>
-                                  <p>52%</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Координаты</h4>
-                                  <p>[59.88, 30.42]</p>
-                            </li>
-                      </ul>
-                </li>
-
-                <li class="city">
-                      <div class="cityWeather">
-                            <h3>Miass</h3>
-                            <p class="temp">20°C</p>
-                            <img src="icons/sun.png" class="fav-city-img">
-                            <button class="remove-bottom">&times;</button>
-                      </div>
-
-                      <ul class="info">
-                            <li class="option">
-                                  <h4>Ветер</h4>
-                                  <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Облачность</h4>
-                                  <p>Broken clouds</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Давление</h4>
-                                  <p>1013 hpa</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Влажность</h4>
-                                  <p>52%</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Координаты</h4>
-                                  <p>[59.88, 30.42]</p>
-                            </li>
-                      </ul>
-                </li>
-
-                <li class="city">
-                      <div class="cityWeather">
-                            <h3>Sochi</h3>
-                            <p class="temp">34°C</p>
-                            <img src="icons/rain.png" class="fav-city-img">
-                            <button class="remove-bottom">&times;</button>
-                      </div>
-
-                      <ul class="info">
-                            <li class="option">
-                                  <h4>Ветер</h4>
-                                  <p>Moderate breeze, 6.0 ms/s, North-northwest</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Облачность</h4>
-                                  <p>Broken clouds</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Давление</h4>
-                                  <p>1013 hpa</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Влажность</h4>
-                                  <p>52%</p>
-                            </li>
-
-                            <li class="option">
-                                  <h4>Координаты</h4>
-                                  <p>[59.88, 30.42]</p>
-                            </li>
-                      </ul>
-                </li>
-            </ul>
-      </section>
-  </main>
+        <ul class="info">
+            <li class="option">
+                <span>Ветер</span>
+                <p></p>
+            </li>
+            <li class="option">
+                <span>Облачность</span>
+                <p></p>
+            </li>
+            <li class="option">
+                <span>Давление</span>
+                <p></p>
+            </li>
+            <li class="option">
+                <span>Влажность</span>
+                <p></p>
+            </li>
+            <li class="option">
+                <span>Координаты</span>
+                <p></p>
+            </li>
+        </ul>
+    </li>
+</template>
 </body>
+<script src="js/script.js"></script>
+</html>
