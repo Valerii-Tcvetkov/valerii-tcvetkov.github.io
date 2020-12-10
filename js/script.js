@@ -4,12 +4,12 @@ let addNewCityForm = document.forms.namedItem('addNewCity');
 updateLocationForm.addEventListener('click', (event) => {
 	getLocation();
 	event.preventDefault();
-})
+});
 
 addNewCityForm.addEventListener('submit', (event) => {
 	addNewCity();
 	event.preventDefault();
-})
+});
 
 function request(params) {
 	params.push('units=metric');
@@ -164,15 +164,19 @@ function getTypeOfCloudy(percent) {
 
 function addNewCity() {
 	const formData = new FormData(addNewCityForm);
-	const cityName = formData.get('newCityName').toString();
+	const cityName = formData.get('newCityName').toString().toLowerCase();
 	addNewCityForm.reset();
+    if (cityName.localeCompare('') == 0) {
+        return;
+    }
 	if (localStorage.hasOwnProperty(cityName)) {
+        alert('City is already in the list');
 		return;
 	}
 	const newCity = newCityLoaderInfo();
 	request(['q=' + cityName]).then((jsonResult) => {
 		if (jsonResult && !localStorage.hasOwnProperty(jsonResult.name)) {
-			localStorage.setItem(jsonResult.name, '');
+			localStorage.setItem(jsonResult.name.toLowerCase(), '');
 			addCity(jsonResult, newCity);
 		} else {
 			newCity.remove();
@@ -193,7 +197,7 @@ function addCity(jsonResult, newCity) {
 	newCity.id = cityName.split(' ').join('-');
 
 	const template = document.querySelector('#tempFavoriteCity');
-	const imp = document.importNode(template.content, true)
+	const imp = document.importNode(template.content, true);
 	imp.querySelector('.favoriteCityName').innerHTML = cityName;
 	imp.querySelector('.degrees').innerHTML = `${Math.floor(jsonResult.main.temp)}&deg;C`;
 	imp.querySelector('.favoriteWeatherImage').src = `icons/${getWeatherIcon(jsonResult)}.png`;
