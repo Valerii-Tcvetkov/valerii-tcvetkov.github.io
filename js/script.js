@@ -1,5 +1,5 @@
 let updateLocationForm = document.forms.namedItem('updateLocation');
-let addNewCityForm = document.forms.namedItem('addNewCity');
+let addNewCityForm = document.getElementById('addNewCity');
 
 updateLocationForm.addEventListener('click', (event) => {
 	getLocation();
