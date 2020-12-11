@@ -163,9 +163,9 @@ function getTypeOfCloudy(percent) {
 }
 
 function addNewCity() {
-	const formData = new FormData(addNewCityForm);
+	const formData = new FormData(event.target);
 	const cityName = formData.get('newCityName').toString().toLowerCase();
-	addNewCityForm.reset();
+    event.target.reset();
     if (cityName.localeCompare('') == 0) {
         return;
     }
