@@ -57,8 +57,8 @@ server.get('/weather/coordinates', (req, res) => {
     let lon = req.query.lon;
     const url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=metric' + '&appid=' + api_key
     fetch(url).then(function (resp) {
-            return resp.json()
-        })
+        return resp.json()
+    })
         .then(function (data) {
             res.send(data)
         })
@@ -131,3 +131,5 @@ server.delete('/favourites', (req, res) => {
 server.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`)
 })
+
+module.exports = server;

@@ -14,9 +14,7 @@ addNewCityForm.addEventListener('submit', (event) => {
 function request(endpoint, params) {
     const url = "http://localhost:8080/weather/";
     const request = url + endpoint + "?" + params;
-	const abortController = new AbortController();
-	const abortSignal = abortController.signal;
-	return fetch(request, {signal: abortSignal}).then((response) => {
+	return fetch(request).then((response) => {
 		if (response.ok) {
 			return response.json();
 		} else {
@@ -51,8 +49,9 @@ function getLocation() {
 	if (currentLocation) {
 		currentLocation.getCurrentPosition(
 			(position) => {
+
                 fillCurrentCityInfo("city", ['q=Saint Petersburg']);
-				//fillCurrentCityInfo("coordinates", [`lat=${position.coords.latitude}`, `lon=${position.coords.longitude}`]);
+				// fillCurrentCityInfo("coordinates", [`lat=${position.coords.latitude}`, `lon=${position.coords.longitude}`]);
 			},
 			(error) => {
 				fillCurrentCityInfo("city", ['q=Saint Petersburg']);
@@ -72,7 +71,7 @@ function currentCityInfoLoader() {
 
 function fillCurrentCityInfo(endpoint, params) {
 	request(endpoint, params).then((jsonResult) => {
-		const template = document.querySelector('#tempCurrentCity');
+        const template = document.querySelector('#tempCurrentCity');
 		const imp = document.importNode(template.content, true)
 		imp.querySelector('.mainCityName').innerHTML = jsonResult.name;
 		imp.querySelector('.currentWeatherImage').src = `icons/${getWeatherIcon(jsonResult)}.png`;
@@ -294,3 +293,8 @@ function havePrecipitation(jsonResult) {
 
 getLocation();
 addSavedCities();
+
+module.exports = {
+    addCity : addCity,
+    newCityLoaderInfo: newCityLoaderInfo
+}
