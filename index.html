@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three.js Mini Editor</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Three.js Mini Editor</div>
+      <div class="actions">
+        <button id="saveBtn" type="button">Сохранить сцену</button>
+        <button id="exportGlbBtn" type="button">Экспорт GLB</button>
+        <label class="file-label">
+          Загрузить сцену
+          <input id="loadInput" type="file" accept="application/json" />
+        </label>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section>
+        <h2>Добавить объект</h2>
+        <div class="grid">
+          <button data-add="box">Куб</button>
+          <button data-add="sphere">Сфера</button>
+          <button data-add="cylinder">Цилиндр</button>
+          <button data-add="torus">Тор</button>
+          <button data-add="plane">Плоскость</button>
+          <button data-add="light">Свет</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Режим трансформации</h2>
+        <div class="grid">
+          <button data-mode="translate">Перемещение</button>
+          <button data-mode="rotate">Поворот</button>
+          <button data-mode="scale">Масштаб</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Свойства</h2>
+        <div id="selectionInfo" class="info">Выберите объект</div>
+        <pre id="meshStats" class="stats">Нет выбранного mesh</pre>
+        <div class="attrs">
+          <div class="attrs-title">Позиция</div>
+          <div class="triplet">
+            <label>X<input id="posX" type="number" step="0.1" /></label>
+            <label>Y<input id="posY" type="number" step="0.1" /></label>
+            <label>Z<input id="posZ" type="number" step="0.1" /></label>
+          </div>
+          <div class="attrs-title">Габариты (world)</div>
+          <div class="triplet">
+            <label>W<input id="sizeX" type="number" min="0.01" step="0.1" /></label>
+            <label>H<input id="sizeY" type="number" min="0.01" step="0.1" /></label>
+            <label>D<input id="sizeZ" type="number" min="0.01" step="0.1" /></label>
+          </div>
+        </div>
+        <label>
+          Название
+          <input id="nameInput" type="text" placeholder="Object name" />
+        </label>
+        <label>
+          Цвет
+          <input id="colorInput" type="color" value="#4dabf7" />
+        </label>
+        <button id="duplicateBtn" type="button">Копировать объект</button>
+        <button id="deleteBtn" type="button" class="danger">Удалить выбранный</button>
+      </section>
+
+      <section>
+        <h2>Справочник товаров</h2>
+        <table class="catalog-table">
+          <thead>
+            <tr>
+              <th>Наименование</th>
+              <th>Габариты</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="catalog-item" draggable="true" data-product-id="product1">
+              <td>Товар 1</td>
+              <td>1 x 1 x 1</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="hint">Перетащите товар на объект в проекции.</div>
+      </section>
+
+      <section>
+        <h2>Вертикальная проекция (сверху, 2D)</h2>
+        <canvas id="topProjection" width="540" height="405"></canvas>
+        <button id="refreshTopProjectionBtn" type="button">Обновить проекцию</button>
+      </section>
+
+      <section>
+        <h2>Фронтальная проекция (2D)</h2>
+        <canvas id="frontProjection" width="540" height="405"></canvas>
+        <button id="refreshProjectionBtn" type="button">Обновить проекцию</button>
+        <button id="exportSidePngBtn" type="button">Выгрузить side view (PNG)</button>
+      </section>
+    </aside>
+
+    <main id="viewport">
+      <div id="uiMessage" class="ui-message" aria-live="polite" role="status">
+        <div class="ui-message-body">
+          <span class="ui-message-icon">!</span>
+          <span id="uiMessageText" class="ui-message-text"></span>
+        </div>
+        <button id="uiMessageClose" class="ui-message-close" type="button" aria-label="Закрыть уведомление">
+          ×
+        </button>
+      </div>
+      <div id="previewPanel">
+        <div class="preview-title">
+          <span>3D Preview</span>
+          <label class="preview-angle-control">
+            Угол
+            <input id="previewTiltAngle" type="range" min="-45" max="45" step="1" value="0" />
+            <span id="previewTiltValue">0deg</span>
+          </label>
+        </div>
+        <div id="preview3d"></div>
+      </div>
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.162.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
