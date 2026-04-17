@@ -84,6 +84,7 @@ let syncingInputs = false;
 let projectionDirty = true;
 const products = new Map([
   ["product1", { id: "product1", name: "Товар 1", size: { x: 1, y: 1, z: 1 } }],
+  ["product2", { id: "product2", name: "Товар 2", size: { x: 2, y: 2, z: 2 } }],
 ]);
 const productPlacements = [];
 const projectionRenderState = {
