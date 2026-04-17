@@ -26,7 +26,7 @@ body {
 
 body {
   display: grid;
-  grid-template-columns: 630px 1fr;
+  grid-template-columns: 315px 1fr;
   grid-template-rows: 58px 1fr;
   grid-template-areas:
     "topbar topbar"
